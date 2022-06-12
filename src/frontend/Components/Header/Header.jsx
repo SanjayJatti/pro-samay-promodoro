@@ -1,6 +1,22 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
+import { AUTH_TOKEN } from "../../Constants/AuthConstants";
+
 const Header = () => {
+  const { authState, authDispatch } = useAuth();
+  const { token } = authState;
+
+  const navigate = useNavigate();
+
+  const logOutHandler = () => {
+    localStorage.removeItem("token");
+    authDispatch({
+      type: AUTH_TOKEN,
+      payload: null,
+    });
+    navigate("/");
+  };
   return (
     <div>
       <header className="header-wrapper">
@@ -10,7 +26,15 @@ const Header = () => {
           </Link>
         </div>
         <div className="header-items margin-r-xxl">
-          <button className="btn btn-primary">LogIn</button>
+          {token ? (
+            <button className="btn btn-primary" onClick={logOutHandler}>
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-primary">LogIn</button>
+            </Link>
+          )}
         </div>
       </header>
     </div>
