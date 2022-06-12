@@ -29,7 +29,7 @@ const Login = () => {
         type: AUTH_TOKEN,
         payload: response.data.encodedToken,
       });
-      navigate("/");
+      navigate("/tasks");
     } catch (error) {
       authDispatch({
         type: AUTH_ERROR,
