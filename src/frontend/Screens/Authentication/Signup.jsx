@@ -126,7 +126,7 @@ export const Signup = () => {
           <h4 className="text-danger">{error}</h4>
         </form>
         <div className="flex-center">
-          <img  className="auth-img" src={signupImg} alt="signup image" />
+          <img  className="auth-img" src={signupImg} alt="signup" />
         </div>
       </div>
     </>
