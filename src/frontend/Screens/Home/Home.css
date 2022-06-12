@@ -1,0 +1,30 @@
+.hero-wrapper{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: var(--scale-xxl);
+}
+.hero-description{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 50%;
+   gap: var(--scale-md)
+}
+.banner-img{
+   max-width: 100%;
+   object-fit: cover;
+   height: auto;
+}
+.btn-action{
+   padding: var(--scale-md);
+   border-radius: 2.2rem 2.2rem 0 2.2rem;
+   background-color: var(--primary-color);
+   color: var(--off-white);
+}
+.btn-action:hover{
+   background-color: var(--dark-primary-color);
+}
+h1{
+   font-size: 4rem;
+}
