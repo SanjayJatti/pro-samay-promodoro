@@ -1,0 +1,35 @@
+.task-editor-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.4);
+    z-index: var(--z-index-xxl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .task-editor{
+    background-color: var(--light-primary-color);
+    max-width: 25rem;
+    height: auto;
+    border-radius: var(--scale-md);
+    padding: var(--scale-xl);
+  }
+  .task-editor input{
+    width: 24rem;
+    font-family: inherit;
+  }
+  .task-editor textarea{
+    max-width: 24rem;
+    min-height: 10rem;
+    font-family: inherit;
+  }
+.task-editor-footer{
+    justify-content: flex-end;
+    gap: var(--scale-lg)
+}
+.btn{
+    border-radius: 0.7rem;
+}
