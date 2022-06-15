@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./frontend/Context/AuthContext";
 import { TaskProvider } from "./frontend/Context/TaskContext";
+import { PromodoroProvider } from "./frontend/Context/PromodoroContext";
 
 // Call make Server
 makeServer();
@@ -14,7 +15,9 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <TaskProvider>
-          <App />
+          <PromodoroProvider>
+            <App />
+          </PromodoroProvider>
         </TaskProvider>
       </AuthProvider>
     </BrowserRouter>

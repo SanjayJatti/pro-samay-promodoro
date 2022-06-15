@@ -20,7 +20,7 @@ const TaskEditorModal = ({ setTaskEditorModal, taskData, setTaskData }) => {
             taskData._id
               ? editTask(token, taskData, setTask, setTaskData)
               : addTask(token, taskData, setTask, setTaskData);
-            setTaskEditorModal(false)
+            setTaskEditorModal(false);
           }}
         >
           <input
@@ -43,11 +43,20 @@ const TaskEditorModal = ({ setTaskEditorModal, taskData, setTaskData }) => {
           />
           <input
             type="number"
-            placeholder="Duration in minutes"
+            placeholder="Work Duration in mins"
             className="input-container"
-            value={taskData.duration || ""}
+            value={taskData.workDuration || ""}
             onChange={(e) =>
-              setTaskData({ ...taskData, duration: e.target.value })
+              setTaskData({ ...taskData, workDuration: e.target.value })
+            }
+          />
+          <input
+            type="number"
+            placeholder="Break Duration in mins"
+            className="input-container"
+            value={taskData.breakDuration || ""}
+            onChange={(e) =>
+              setTaskData({ ...taskData, breakDuration: e.target.value })
             }
           />
           <div className="task-editor-footer flex-row">

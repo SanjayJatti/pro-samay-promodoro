@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { TaskEditorModal } from "../../Components/TaskEditorModal/TaskEditorModal";
 import { useAuth } from "../../Context/AuthContext";
+import { usePromodoro } from "../../Context/PromodoroContext";
 import { useTask } from "../../Context/TaskContext";
 import { deleteTask, editTask } from "../../Services/tasksServices";
 import "./Tasks.css";
@@ -12,9 +14,12 @@ const Tasks = () => {
   const [taskData, setTaskData] = useState({
     title: "",
     description: "",
-    duration: "",
+    workDuration: "",
+    breakDuration: "",
     isDone: false,
   });
+  const { promodoro, setPromodoro } = usePromodoro();
+  const navigate = useNavigate();
   return (
     <>
       {taskEditorModal && (
@@ -56,13 +61,23 @@ const Tasks = () => {
                         editTask(token, taskItem, setTask, setTaskData);
                       }}
                     />
-                    <h3 className={taskItem.isDone ? "line-through" : ""}>{taskItem.title}</h3>
+                    <h3 className={taskItem.isDone ? "line-through" : ""}>
+                      {taskItem.title}
+                    </h3>
                   </div>
 
                   <div className="task-actions">
                     <i
                       className="fas fa-clock cursor-pointer"
                       title="Promodoro"
+                      onClick={() => {
+                        setPromodoro({
+                          ...promodoro,
+                          workMinutes: taskItem.workDuration,
+                          breakMinutes: taskItem.breakDuration,
+                        });
+                        navigate(`/promodoro/${taskItem._id}`);
+                      }}
                     ></i>
                     <i
                       className="fas fa-edit cursor-pointer"
