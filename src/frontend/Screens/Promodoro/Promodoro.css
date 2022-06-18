@@ -1,0 +1,19 @@
+.promodoro-actions i {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+.promodoro-main {
+  width: 60%;
+  margin-top: 5rem;
+}
+.promodoro-timer {
+  width: 35rem;
+}
+.promodoro-task {
+  background-color: var(--primary-color);
+  border-radius: var(--scale-xl);
+  padding: var(--scale-xxl);
+  width: 25rem;
+  height: fit-content;
+  color: var(--off-white);
+}
