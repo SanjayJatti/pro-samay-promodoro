@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Link, useNavigate } from "react-router-dom";
+import {Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { AUTH_TOKEN } from "../../Constants/AuthConstants";
 
@@ -20,26 +20,26 @@ const Header = () => {
   return (
     <div>
       <header className="header-wrapper">
-        <div className="margin-l-xxl">
+        <div className="flex-center header-title">
           <Link to="/">
             <h2 className="text-primary">⏱pro-samay</h2>
           </Link>
         </div>
         <div className="flex-center gap-xl margin-r-xxl">
-          <Link to="/tasks">
+          <NavLink to="/tasks">
             <h4 className="text-secondary">Tasks</h4>
-          </Link>
-          <Link to="/promodoro">
+          </NavLink>
+          <NavLink to="/promodoro">
             <h4 className="text-secondary">Promodoro</h4>
-          </Link>
+          </NavLink>
           {token ? (
             <button className="btn btn-primary" onClick={logOutHandler}>
               Logout
             </button>
           ) : (
-            <Link to="/login">
+            <NavLink to="/login">
               <button className="btn btn-primary">LogIn</button>
-            </Link>
+            </NavLink>
           )}
         </div>
       </header>

@@ -4,7 +4,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem;
+}
+.header-title{
+    margin-left: var(--scale-xxl);
 }
 .btn{
     padding: var(--scale-sm);
+}
+
+@media only screen and (max-width: 800px){
+    .header-wrapper{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .header-title{
+        margin-left: 0;
+    }
 }
