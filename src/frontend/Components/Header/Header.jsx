@@ -22,7 +22,7 @@ const Header = () => {
       <header className="header-wrapper">
         <div className="flex-center header-title">
           <Link to="/">
-            <h2 className="text-primary">⏱pro-samay</h2>
+            <h2 className="text-primary"><span className="margin-r-xs">⏱</span>pro-samay</h2>
           </Link>
         </div>
         <div className="flex-center gap-xl margin-r-xxl">
@@ -37,9 +37,9 @@ const Header = () => {
               Logout
             </button>
           ) : (
-            <NavLink to="/login">
+            <Link to="/login">
               <button className="btn btn-primary">LogIn</button>
-            </NavLink>
+            </Link>
           )}
         </div>
       </header>

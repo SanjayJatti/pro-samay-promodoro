@@ -35,9 +35,13 @@
 }
 
 @media only screen and (max-width: 1050px){
+  .promodoro-container{
+    margin-top: var(--scale-xxl);
+  }
   .promodoro-container-task{
     flex-direction: column;
-    margin-top: var(--scale-lg);
+    margin-top: var(--scale-xxl);
+    align-items: center;
   }
   .promodoro-main{
     width: 100%;
