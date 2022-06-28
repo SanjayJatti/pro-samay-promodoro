@@ -89,7 +89,7 @@ const Login = () => {
           </Link>
           <h4 className="text-danger">{error}</h4>
         </form>
-        <div className="flex-center">
+        <div className="flex-center display-none">
           <img className="auth-img" src={loginImg} alt="login" />
         </div>
       </div>

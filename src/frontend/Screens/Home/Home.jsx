@@ -6,9 +6,9 @@ const Home = () => {
     <>
       <div className="hero-wrapper">
         <div className="hero-description">
-          <h1>Work Efficiently</h1>
-          <h1>Do Full Focused Work</h1>
-          <h1>With Periodic Breaks</h1>
+          <h1 className="bigger-font">Work Efficiently</h1>
+          <h1 className="bigger-font">Do Full Focused Work</h1>
+          <h1 className="bigger-font">With Periodic Breaks</h1>
           <Link to="/tasks">
             <button className="btn-action margin-t-md">
               <h2>Get Started</h2>

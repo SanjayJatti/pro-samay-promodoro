@@ -69,10 +69,10 @@ export const Promodoro = () => {
   }, [minutesLeft, secondsLeft]);
 
   return (
-    <div className={pathname === "/promodoro" ? "flex-center" : "flex-row"}>
-      <div className="promodoro-main flex-column-center gap-xl">
+    <div className={pathname === "/promodoro" ? "promodoro-container" : "promodoro-container-task"}>
+      <div className="promodoro-main flex-column-center gap-md">
         <div className="promodoro-timer ">
-          <div>
+          <div className="circularProgressbar">
             <CircularProgressbar
               value={percentageTimeLeft}
               text={`${minutesLeft} : ${secondsLeft}`}
@@ -117,10 +117,10 @@ export const Promodoro = () => {
               setMode((mode) => (mode === "work" ? "break" : "work"))
             }
           ></i>
+           <h2 className="flex-center">{mode.toUpperCase()}</h2>
         </div>
-        <h2>{mode}</h2>
       </div>
-      <div className="flex-center">
+      <div className="promodoro-task-container flex-center">
         {taskId && (
           <div className="promodoro-task">
             <h3 className="margin-b-md">{getCurrentTask[0].title}</h3>

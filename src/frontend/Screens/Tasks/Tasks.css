@@ -1,7 +1,7 @@
 .tasks-wrapper {
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  max-width: 60%;
   align-items: flex-start;
   margin: auto;
   margin-top: 5rem;
@@ -19,13 +19,12 @@
 .tasks-box {
   background-color: var(--off-white);
   border-radius: var(--scale-xl);
-  height: fit-content;
-  width: 55vw;
-  padding: var(--scale-xl);
+  width: 100%;
 }
 .tasks-title {
   display: flex;
   justify-content: space-between;
+  margin: var(--scale-xl);
 }
 .add-tasks-btn {
   padding: 2.2rem;
@@ -43,11 +42,14 @@
   color: var(--off-white);
 }
 .tasks-list {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: var(--scale-xl)
 }
 .tasks-info {
   align-items: center;
+  margin-right: 1rem;
 }
 .task-actions {
   display: flex;
@@ -59,4 +61,20 @@
 }
 .line-through {
   text-decoration: line-through;
+}
+
+@media only screen and (max-width: 800px){
+  .tasks-wrapper{
+    max-width: 100%;
+    margin: var(--scale-xxl);
+  }
+}
+@media only screen and (max-width: 650px){
+  .tasks-list{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task-actions{
+    margin-top: 0.5rem;
+  }
 }

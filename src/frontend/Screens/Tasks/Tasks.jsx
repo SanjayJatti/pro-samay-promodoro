@@ -20,6 +20,11 @@ const Tasks = () => {
   });
   const { promodoro, setPromodoro } = usePromodoro();
   const navigate = useNavigate();
+  
+  function truncate(str, maxlength) {
+    return (str.length > maxlength) ?
+      str.slice(0, maxlength - 1) + '…' : str;
+  }
   return (
     <>
       {taskEditorModal && (
@@ -50,7 +55,7 @@ const Tasks = () => {
           {task.length !== 0 &&
             task.map((taskItem, index) => {
               return (
-                <div key={index} className="tasks-list flex-row margin-t-md">
+                <div key={index} className="tasks-list margin-t-md">
                   <div className="tasks-info flex-row">
                     <input
                       type="checkbox"
@@ -62,7 +67,7 @@ const Tasks = () => {
                       }}
                     />
                     <h3 className={taskItem.isDone ? "line-through" : ""}>
-                      {taskItem.title}
+                      {truncate(taskItem.title, 15)}
                     </h3>
                   </div>
 

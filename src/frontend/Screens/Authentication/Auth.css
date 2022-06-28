@@ -1,5 +1,6 @@
 .auth-page{
-    margin: 3rem auto 3rem auto;
+    margin: auto;
+    margin-top: var(--scale-xl);
     max-width: 60vw;
     background-color: var(--primary-color);
     padding:  var(--scale-xl);
@@ -15,4 +16,10 @@
     object-fit: cover;
     height: auto;
     width: 30vw;
+}
+
+@media only screen and (max-width: 1050px){
+    .display-none{
+        display: none;
+    }
 }
