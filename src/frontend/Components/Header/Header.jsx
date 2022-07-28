@@ -2,6 +2,7 @@ import "./Header.css";
 import {Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import { AUTH_TOKEN } from "../../Constants/AuthConstants";
+import toast from "react-hot-toast"
 
 const Header = () => {
   const { authState, authDispatch } = useAuth();
@@ -16,6 +17,7 @@ const Header = () => {
       payload: null,
     });
     navigate("/");
+    toast.success("Logged out")
   };
   return (
     <div>

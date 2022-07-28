@@ -13,6 +13,7 @@ import { useAuth } from "../../Context/AuthContext";
 import axios from "axios";
 import "./Auth.css";
 import signupImg from "../../Assets/signupImg.svg"
+import toast  from "react-hot-toast";
 
 export const Signup = () => {
   const { authState, authDispatch } = useAuth();
@@ -36,11 +37,13 @@ export const Signup = () => {
         payload: response.data.encodedToken,
       });
       navigate("/login");
+      toast.success("Signed up successfully")
     } catch (error) {
       authDispatch({
         type: AUTH_ERROR,
         payload: "Sign up failed",
       });
+      toast.error("Sign up failed")
     }
   };
   return (

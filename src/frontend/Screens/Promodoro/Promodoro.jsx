@@ -85,7 +85,7 @@ export const Promodoro = () => {
         </div>
         <div className="promodoro-actions flex-row gap-xl">
           <i
-            className="fas fa-sync"
+            className="fas fa-sync cursor-pointer"
             onClick={() => {
               timeLeftInSecRef.current =
                 mode === "work"
@@ -96,7 +96,7 @@ export const Promodoro = () => {
           ></i>
           {isPaused ? (
             <i
-              className="fas fa-play-circle"
+              className="fas fa-play-circle cursor-pointer"
               onClick={() => {
                 setIsPaused(false);
                 isPausedRef.current = false;
@@ -104,7 +104,7 @@ export const Promodoro = () => {
             ></i>
           ) : (
             <i
-              className="fas fa-pause-circle"
+              className="fas fa-pause-circle cursor-pointer"
               onClick={() => {
                 setIsPaused(true);
                 isPausedRef.current = true;
@@ -112,7 +112,7 @@ export const Promodoro = () => {
             ></i>
           )}
           <i
-            className="fas fa-chevron-circle-right"
+            className="fas fa-chevron-circle-right cursor-pointer"
             onClick={() =>
               setMode((mode) => (mode === "work" ? "break" : "work"))
             }

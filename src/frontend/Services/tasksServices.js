@@ -1,4 +1,5 @@
 import axios from "axios";
+import  toast  from "react-hot-toast";
 
 const getTasksData = async (token, setTask) => {
   try {
@@ -27,8 +28,9 @@ const addTask = async (token, taskData, setTask, setTaskData) => {
       }
     );
     setTask(response.data.habits);
+    toast.success("Created new task")
   } catch (error) {
-    console.error(error);
+    toast.error("Unable to create new task")
   }
   setTaskData("");
 };
@@ -47,8 +49,9 @@ const editTask = async (token, taskData, setTask, setTaskData) => {
       }
     );
     setTask(response.data.habits);
+    toast.success("Edited the given task")
   } catch (error) {
-    console.log(error);
+    toast.error("Failed to edit the task")
   }
   setTaskData("");
 };
@@ -60,8 +63,9 @@ const deleteTask = async (token, taskItem, setTask) => {
       },
     });
     setTask(response.data.habits);
+    toast.success("Task deleted")
   } catch (error) {
-    console.log(error);
+    toast.error("Failed to delete the task")
   }
 };
 

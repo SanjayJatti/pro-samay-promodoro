@@ -10,6 +10,7 @@ import {
 } from "../../Constants/AuthConstants";
 import axios from "axios";
 import loginImg from "../../Assets/loginImg.svg";
+import toast from "react-hot-toast"
 
 const Login = () => {
   const { authState, authDispatch } = useAuth();
@@ -30,11 +31,13 @@ const Login = () => {
         payload: response.data.encodedToken,
       });
       navigate("/tasks");
+      toast.success("Looged in successfully")
     } catch (error) {
       authDispatch({
         type: AUTH_ERROR,
         payload: "Invalid email or password",
       });
+      toast.error("Invalid email or password")
     }
   };
   return (

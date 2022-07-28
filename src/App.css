@@ -6,3 +6,8 @@
     width: 100%;
     overflow-x: hidden;
 }
+:root{
+    --primary-color: #7b2cbf;
+    --dark-primary-color: #3c096c;
+    --light-primary-color:#e0aaff;
+}
